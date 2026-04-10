@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>anggre ku sayanggg ❤️</title>
+
+<!-- FONT ESTETIK -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    background: url('sayangku.jpg') no-repeat center center/cover;
+}
+
+/* overlay */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* judul romantis */
+h1 {
+    margin-top: 40px;
+    font-size: 32px;
+    font-family: 'Pacifico', cursive;
+    color: #ffdde1;
+    text-shadow: 0 0 15px rgba(255,255,255,0.9);
+}
+
+/* isi */
+p {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* animasi love */
+.heart {
+    position: absolute;
+    color: #ff4b7d;
+    font-size: 18px;
+    animation: naik 5s linear infinite;
+}
+
+@keyframes naik {
+    0% {transform: translateY(100vh);}
+    100% {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body onclick="playMusic()">
+
+<h1>Anggre Sayangku ❤️</h1>
+
+<p>
+sayangg 💖<br><br>
+
+Aku sayang banget sama kamu ❤️🥺…<br>
+kamu itu bukan sekadar orang spesial, tapi juga jadi alasan aku semangat setiap hari ✨<br>
+Gak ada wanita lain di pikiranku, karena yang aku mau cuma kamu 💖<br>
+Kamu yang selalu bikin hati aku tenang, kamu yang jadi tempat aku balik saat capek<br><br>
+
+dan kamu juga yang paling aku hargai 🤍<br>
+Kamu itu favoritku, penyemangatku, dan orang yang selalu aku doakan supaya tetap bahagia 🌷✨<br>
+Aku cuma mau kamu tahu satu hal<br><br>
+
+ perasaan aku ke kamu itu tulus dan gak berubah 💕🥰<br>
+kaulah pujaan hatiku sayangg <br>
+cuma kamu penjaga hati ini🤍<br><br>
+
+satu pintakuuuu sayangggggg<br>
+tempatkanlah indah namaku di hatimu<br>
+sebagai kekasih mu yang tak pernah sirna<br>
+aku sayangg kamu anggreee <br><br>
+
+Terima kasih ya sayangg,<br>
+dari hal sederhana sampai jadi luar biasa 🤍✌🏻
+</p>
+
+<!-- AUDIO -->
+<audio id="musik" autoplay loop muted>
+    <source src="ultah.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let audio = document.getElementById("musik");
+
+function playMusic() {
+    audio.muted = false;
+    audio.play();
+}
+
+window.onload = () => {
+    audio.play().then(() => {
+        setTimeout(() => {
+            audio.muted = false;
+        }, 1000);
+    }).catch(() => {
+        document.body.addEventListener("click", () => {
+            audio.muted = false;
+            audio.play();
+        });
+    });
+};
+
+/* animasi love */
+function love() {
+    const el = document.createElement("div");
+    el.className = "heart";
+    el.innerHTML = "❤️";
+    el.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(el);
+
+    setTimeout(() => el.remove(), 5000);
+}
+
+setInterval(love, 300);
+</script>
+
+</body>
+</html>
